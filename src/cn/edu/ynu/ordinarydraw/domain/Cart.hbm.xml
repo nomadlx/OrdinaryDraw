@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.edu.ynu.ordinarydraw.domain">
+
+	<class name="Cart" table="t_cart" lazy="false">
+		<composite-id>
+			<key-property name="userid" type="int" column="user_id"
+				length="5"></key-property>
+			<key-many-to-one name="goods" column="goods_id"
+				class="Goods" lazy="false"></key-many-to-one>
+		</composite-id>
+		<property name="addtime" type="string" column="add_time"></property>
+		<property name="statu" type="string" column="statu" length="1"></property>
+
+	</class>
+
+</hibernate-mapping>

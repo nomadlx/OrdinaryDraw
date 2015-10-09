@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.edu.ynu.ordinarydraw.domain">
+
+	<class name="Like" table="t_like" lazy="true">
+		<composite-id>
+			<key-property name="userid" type="int" column="user_id"
+				length="5"></key-property>
+			<key-property name="goodsid" type="int" column="goods_id"
+				length="5"></key-property>
+		</composite-id>
+		<property name="likedate" type="string" column="like_date"></property>
+
+	</class>
+
+</hibernate-mapping>

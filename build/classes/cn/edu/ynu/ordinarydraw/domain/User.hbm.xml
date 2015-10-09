@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.edu.ynu.ordinarydraw.domain">
+
+	<class name="User" table="t_user" lazy="true">
+		<id name="userid" type="int" column="user_id" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<property name="email" type="string" column="email" length="254"></property>
+		<property name="pwd" type="string" column="pwd" length="32"></property>
+		<property name="img" type="string" column="img" length="260"></property>
+		<property name="uname" type="string" column="uname" length="20"></property>
+		<property name="addr" type="string" column="addr" length="10"></property>
+		<property name="udesc" type="text" column="udesc"></property>
+		<property name="statu" type="string" column="statu"   length="1"></property>
+
+	</class>
+
+</hibernate-mapping>

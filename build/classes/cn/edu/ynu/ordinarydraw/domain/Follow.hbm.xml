@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.edu.ynu.ordinarydraw.domain">
+
+	<class name="Follow" table="t_follow" lazy="true">
+		<composite-id>
+			<key-property name="userid1" type="int" column="user_id1"
+				length="5"></key-property>
+			<key-property name="userid2" type="int" column="user_id2"
+				length="5"></key-property>
+		</composite-id>
+		<property name="followdate" type="string" column="follow_date"></property>
+
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.edu.ynu.ordinarydraw.domain">
+
+	<class name="Tag" table="t_tag" lazy="true">
+		<id name="tagid" type="int" column="tag_id" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<property name="tname" type="string" column="tname" length="20"></property>
+		<property name="updatetime" type="string" column="update_time"></property>
+		<property name="goodscount" type="int" column="goods_qty"
+			length="11"></property>
+
+	</class>
+
+</hibernate-mapping>

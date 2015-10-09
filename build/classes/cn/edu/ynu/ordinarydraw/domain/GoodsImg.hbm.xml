@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.edu.ynu.ordinarydraw.domain">
+
+	<class name="GoodsImg" table="t_goods_img" lazy="true">
+		<composite-id>
+			<key-property name="goodsid" type="int" column="goods_id"
+				length="5"></key-property>
+			<key-property name="seq" type="short" column="seq"
+				length="4"></key-property>
+		</composite-id>
+		<property name="path" type="string" column="path" length="260"></property>
+
+	</class>
+
+</hibernate-mapping>

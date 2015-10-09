@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.edu.ynu.ordinarydraw.domain">
+
+	<class name="GoodsTag" table="t_goods_tag" lazy="false">
+		<composite-id>
+			<key-property name="goodsid" type="int" column="goods_id"
+				length="5"></key-property>
+			<key-many-to-one name="tag" column="tag_id" class="Tag" lazy="false"></key-many-to-one>
+		</composite-id>
+		<property name="seq" type="short" column="seq" length="4"></property>
+
+	</class>
+
+</hibernate-mapping>

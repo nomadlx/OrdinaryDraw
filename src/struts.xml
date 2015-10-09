@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="default" extends="struts-default">
+		<action name="register-*" class="cn.edu.ynu.ordinarydraw.action.registerAction"
+			method="{1}">
+			<result name="index">register.jsp</result>
+		</action>
+		<action name="login-*" class="cn.edu.ynu.ordinarydraw.action.loginAction"
+			method="{1}">
+			<result name="login" type="redirect">login.jsp</result>
+			<result name="home" type="redirect">home-index</result>
+		</action>
+		<action name="home-*" class="cn.edu.ynu.ordinarydraw.action.homeAction"
+			method="{1}">
+			<result name="login" type="redirect">login.jsp</result>
+			<result name="index">/WEB-INF/views/user/home.jsp</result>
+		</action>
+		<action name="discovery-*" class="cn.edu.ynu.ordinarydraw.action.discoveryAction"
+			method="{1}">
+			<result name="login" type="redirect">login.jsp</result>
+			<result name="index">/WEB-INF/views/user/discovery.jsp</result>
+		</action>
+		<action name="follow-*" class="cn.edu.ynu.ordinarydraw.action.followAction"
+			method="{1}">
+			<result name="login" type="redirect">login.jsp</result>
+			<result name="index">/WEB-INF/views/user/follow.jsp</result>
+		</action>
+		<action name="loveset-*" class="cn.edu.ynu.ordinarydraw.action.lovesetAction"
+			method="{1}">
+			<result name="login" type="redirect">login.jsp</result>
+			<result name="index">/WEB-INF/views/user/loveset.jsp</result>
+		</action>
+		<action name="workedit-*" class="cn.edu.ynu.ordinarydraw.action.workeditAction"
+			method="{1}">
+			<result name="login" type="redirect">login.jsp</result>
+			<result name="index">/WEB-INF/views/user/workedit.jsp</result>
+			<result name="publish" type="redirect">myhome-index</result>
+		</action>
+		<action name="myhome-*" class="cn.edu.ynu.ordinarydraw.action.myhomeAction"
+			method="{1}">
+			<result name="login" type="redirect">login.jsp</result>
+			<result name="index">/WEB-INF/views/user/myhome.jsp</result>
+		</action>
+		<action name="shopcart-*" class="cn.edu.ynu.ordinarydraw.action.shopcartAction"
+			method="{1}">
+			<result name="login" type="redirect">login.jsp</result>
+			<result name="index">/WEB-INF/views/user/shopcart.jsp</result>
+		</action>
+		<action name="myorder-*" class="cn.edu.ynu.ordinarydraw.action.myorderAction"
+			method="{1}">
+			<result name="login" type="redirect">login.jsp</result>
+			<result name="index">/WEB-INF/views/user/myorder.jsp</result>
+			<result name="download" type="stream">
+				<param name="contentType">
+					application/octet-stream;charset=ISO8859-1
+				</param>
+				<param name="contentDisposition">
+					attachment;filename="${fileName}"
+				</param>
+				<param name="inputName"> downloadFile </param>
+				<param name="bufferSize">4096</param>
+			</result>
+
+		</action>
+		<action name="profile-*" class="cn.edu.ynu.ordinarydraw.action.profileAction"
+			method="{1}">
+			<result name="login" type="redirect">login.jsp</result>
+			<result name="index">/WEB-INF/views/user/profile.jsp</result>
+		</action>
+		<action name="authorhome-*" class="cn.edu.ynu.ordinarydraw.action.authorhomeAction"
+			method="{1}">
+			<result name="login" type="redirect">login.jsp</result>
+			<result name="index">/WEB-INF/views/user/authorhome.jsp</result>
+		</action>
+		<action name="workshow-*" class="cn.edu.ynu.ordinarydraw.action.workshowAction"
+			method="{1}">
+			<result name="login" type="redirect">login.jsp</result>
+			<result name="index">/WEB-INF/views/user/workshow.jsp</result>
+		</action>
+		<action name="searchtag-*" class="cn.edu.ynu.ordinarydraw.action.searchtagAction"
+			method="{1}">
+			<result name="login" type="redirect">login.jsp</result>
+			<result name="index">/WEB-INF/views/user/searchtag.jsp</result>
+		</action>
+		<action name="searchuser-*" class="cn.edu.ynu.ordinarydraw.action.searchuserAction"
+			method="{1}">
+			<result name="login" type="redirect">login.jsp</result>
+			<result name="index">/WEB-INF/views/user/searchuser.jsp</result>
+		</action>
+	</package>
+	<package name="json" extends="json-default">
+		<action name="json-*-*" class="cn.edu.ynu.ordinarydraw.action.{1}Action"
+			method="{2}">
+			<result type="json">
+				<!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->
+				<param name="root">json</param>
+			</result>
+		</action>
+	</package>
+</struts>

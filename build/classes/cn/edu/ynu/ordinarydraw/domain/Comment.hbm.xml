@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.edu.ynu.ordinarydraw.domain">
+
+	<class name="Comment" table="t_comment" lazy="false">
+		<id name="commentid" type="int" column="comment_id" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<many-to-one name="user" column="user_id" class="User" lazy="false"></many-to-one>
+		<property name="goodsid" type="int" column="goods_id" length="5"></property>
+		<property name="content" type="text" column="content"></property>
+		<property name="publishtime" type="string" column="publish_time"></property>
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.edu.ynu.ordinarydraw.domain">
+
+	<class name="Report" table="t_report" lazy="true">
+		<id name="reportid" type="int" column="report_id" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<property name="userid" type="int" column="user_id" length="5"></property>
+		<property name="goodsid" type="int" column="goods_id" length="5"></property>
+		<property name="reason" type="text" column="reason"></property>
+		<property name="reportdate" type="string" column="report_date"></property>
+		<property name="statu" type="string" column="statu" length="1"></property>
+		<property name="username" type="string" column="username"
+			length="20"></property>
+		<property name="operatedate" type="string" column="operate_date"></property>
+
+	</class>
+
+</hibernate-mapping>

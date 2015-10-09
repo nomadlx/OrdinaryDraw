@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.edu.ynu.ordinarydraw.domain">
+
+	<class name="Goods" table="t_goods">
+		<id name="goodsid" type="int" column="goods_id" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<property name="gname" type="string" column="gname" length="20"></property>
+		<property name="gdesc" type="text" column="gdesc"></property>
+		<property name="price" type="float" column="price"></property>
+		<property name="publishtime" type="string" column="publish_time"></property>
+		<property name="updatetime" type="string" column="update_time"></property>
+		<property name="imgcount" type="short" column="img_count"
+			length="4"></property>
+		<property name="statu" type="string" column="statu" length="1"></property>
+		<many-to-one name="user" column="user_id" class="User"
+			lazy="false"></many-to-one>
+		<set name="goodsimgs" lazy="false" >
+			<key column="goods_id" />
+			<one-to-many class="GoodsImg" />
+		</set>
+		<set name="goodstags" lazy="false" >
+			<key column="goods_id" />
+			<one-to-many class="GoodsTag" />
+		</set>
+
+	</class>
+
+</hibernate-mapping>
